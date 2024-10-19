@@ -22,5 +22,13 @@ jobs:
 
             - run: dotnet publish --configuration Release -o ./webstore
               name: publish
+
+            - name: Upload a Build Artifact
+              uses: actions/upload-artifact@v4.4.3
+              with:
+                # Artifact name
+                name: webstore
+                # A file, directory or wildcard pattern that describes what to upload
+                path: ./webstore
           
             
